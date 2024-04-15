@@ -1,0 +1,8 @@
+FROM bitnami/mysql:latest
+
+USER 1001
+
+ENV MYSQL_PORT_NUMBER=3308
+EXPOSE 3308
+
+USER 1002
