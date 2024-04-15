@@ -2,7 +2,7 @@
 
 namespace common\components;
 
-final class AbstractController
+abstract class AbstractController
 {
 
 }

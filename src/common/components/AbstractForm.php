@@ -2,7 +2,7 @@
 
 namespace common\components;
 
-final class AbstractForm
+abstract class AbstractForm
 {
 
 }
