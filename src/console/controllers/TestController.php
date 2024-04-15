@@ -2,7 +2,12 @@
 
 namespace console\controllers;
 
-final class TestController
-{
+use yii\console\Controller;
 
+final class TestController extends Controller
+{
+    public function actionTest(): void
+    {
+        echo "Консоль запущена!";
+    }
 }

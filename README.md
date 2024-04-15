@@ -13,3 +13,13 @@ docker network create  bs-network
 ```
 docker compose up -d
 ```
+4. Накат миграции
+```
+docker compose run --rm bs-php-cli php ./yii.php migrate
+```
+
+Запуск проекта с помощью make:
+```
+make help
+```
+
