@@ -2,7 +2,9 @@
 
 namespace common\components;
 
-abstract class AbstractController
+use yii\web\Controller;
+
+abstract class AbstractController extends Controller
 {
 
 }

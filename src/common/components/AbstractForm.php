@@ -2,7 +2,9 @@
 
 namespace common\components;
 
-abstract class AbstractForm
+use yii\base\Model;
+
+abstract class AbstractForm extends Model
 {
 
 }

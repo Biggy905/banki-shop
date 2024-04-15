@@ -2,6 +2,8 @@
 
 $db = require '../../common/config/db.php';
 $routes = require 'routes.php';
+$containers = require 'containers.php';
+$params = require 'params.php';
 
 return [
     'id' => 'site',
@@ -11,11 +13,9 @@ return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@resoursesMain' => '@site/resourses/main',
     ],
     'components' => [
-        'request' => [
-            'cookieValidationKey' => 'aaabbb123',
-        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -35,5 +35,9 @@ return [
             'rules' => $routes,
         ],
     ],
-    //'params' => $params,
+    'params' => $params,
+    'container' => [
+        'singletons' => $containers,
+        'definitions' => [],
+    ],
 ];
