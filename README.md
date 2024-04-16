@@ -17,6 +17,19 @@ docker compose up -d
 ```
 docker compose run --rm bs-php-cli php ./yii.php migrate
 ```
+5. Изменение права доступа к директории
+```
+chmod 777 -R /app/src/api/runtime
+```
+```
+chmod 777 -R /app/src/site/runtime
+```
+```
+chmod 777 -R /app/src/public/assets
+```
+```
+chmod 777 -R /app/src/console/runtime
+```
 
 Запуск проекта с помощью make:
 ```

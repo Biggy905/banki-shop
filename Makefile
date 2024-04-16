@@ -34,3 +34,9 @@ migrate-up:
 	docker compose run --rm bs-php-cli php ./yii migrate -- --interactive=0
 migrate-down:
 	docker compose run --rm bs-php-cli php ./yii migrate/down all -- --interactive=0
+chmod:
+	docker compose run --rm bs-php-cli chmod 777 -R /app/src/api/runtime
+	docker compose run --rm bs-php-cli chmod 777 -R /app/src/site/runtime
+	docker compose run --rm bs-php-cli chmod 777 -R /app/src/site/public/assets
+	docker compose run --rm bs-php-cli chmod 777 -R /app/src/console/runtime
+

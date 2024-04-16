@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+namespace application\common\repositories;
+
+use common\repositories\interfaces\PhotoAlbumRepositoryInterface;
+
+final class PhotoAlbumRepository implements PhotoAlbumRepositoryInterface
+{
+
+}
