@@ -29,20 +29,17 @@ $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width, 
 <?php $this->beginBody() ?>
 
     <header>
-
-    <?= $this->render('header')?>
-
+<?= $this->render('header')?>
     </header>
 
 <?= $content ?>
 
+    <footer class="fixed-bottom">
+<?= $this->render('footer')?>
+    </footer>
+
 <?php $this->endBody() ?>
 
-    <footer class="fixed-bottom">
-
-    <?= $this->render('footer')?>
-
-    </footer>
 </body>
 
 <?php $this->endPage() ?>

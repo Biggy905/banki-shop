@@ -10,11 +10,11 @@ final class m240415_145936_create_table_photoalbum extends Migration
             \application\common\entities\PhotoAlbum::tableName(),
             [
                 'id' => $this->primaryKey(11),
-                'title' => $this->string(255),
-                'slug' => $this->string(255),
-                'created_at' => $this->dateTime(),
-                'updated_at' => $this->dateTime(),
-                'deleted_at' => $this->dateTime(),
+                'title' => $this->string(255)->notNull(),
+                'slug' => $this->string(255)->unique()->notNull(),
+                'created_at' => $this->dateTime()->notNull(),
+                'updated_at' => $this->dateTime()->null(),
+                'deleted_at' => $this->dateTime()->null(),
             ]
         );
     }

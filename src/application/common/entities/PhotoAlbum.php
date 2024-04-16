@@ -15,6 +15,8 @@ use yii\db\ActiveQuery;
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
+ *
+ * @property array $fileStorage
  */
 final class PhotoAlbum extends AbstractModel
 {
