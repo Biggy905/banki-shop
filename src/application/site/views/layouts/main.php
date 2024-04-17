@@ -35,7 +35,7 @@ $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width, 
 <?= $content ?>
 
     <footer class="fixed-bottom">
-<?= $this->render('footer')?>
+<?php //= $this->render('footer')?>
     </footer>
 
 <?php $this->endBody() ?>

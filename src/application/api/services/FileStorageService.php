@@ -100,8 +100,9 @@ final class FileStorageService
         string $date,
     ): string {
         $name = $this->generateName();
+        $filename = $name . '_' . $date . '.' . $file->getExtension();
 
-        $generatePathStorage = $storagePath . '/' . $name . '_' . $date . '.' . $file->getExtension();
+        $generatePathStorage = $storagePath . '/' . $filename;
 
         if (!$generatePathStorage) {
             throw new LogicException();
@@ -109,7 +110,7 @@ final class FileStorageService
 
         $file->saveAs($generatePathStorage);
 
-        return $name;
+        return $filename;
     }
 
     public function saveDb(

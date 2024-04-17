@@ -1,7 +1,10 @@
 <?php
 
+use application\common\helpers\ApiUrl\ApiUrl;
+
 $db = require '../../common/config/db.php';
 $routes = require 'routes.php';
+$apiRoutes = require '../../api/config/routes.php';
 $containers = require 'containers.php';
 $params = require 'params.php';
 
@@ -44,6 +47,15 @@ $config = [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => $routes,
+        ],
+        ApiUrl::$componentName  => [
+            'class' => \yii\web\UrlManager::class,
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => true,
+            'baseUrl' => '/',
+            'hostInfo' => sprintf('%s://%s:%s', 'http', 'localhost', '7010'),
+            'rules' => $apiRoutes,
         ],
     ],
     'params' => $params,

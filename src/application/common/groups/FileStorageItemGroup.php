@@ -13,8 +13,7 @@ final class FileStorageItemGroup
         $path = (new FileStorageItemGroup())
             ->convertToPathFile(
                 $fileStorage->dir,
-                $fileStorage->name,
-                $fileStorage->format
+                $fileStorage->name
             );
 
         return [
@@ -32,9 +31,8 @@ final class FileStorageItemGroup
 
     private function convertToPathFile(
         string $dir,
-        string $name,
-        string $format
+        string $name
     ): string {
-        return $dir . '/' . $name . '.' . $format;
+        return $dir . '/' . $name;
     }
 }
