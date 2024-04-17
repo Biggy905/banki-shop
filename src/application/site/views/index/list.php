@@ -191,7 +191,7 @@ $this->registerJs($jsUpdate, \yii\web\View::POS_END);
                                         <div id="form-upload-files<?= $key?>">
                                             <div class="mb-3">
                                                 <label for="formFile" class="form-label">Загрузить изображения</label>
-                                                <input id="input-upload-files<?= $key?>" class="form-control" type="file" id="images[]" multiple>
+                                                <input id="input-upload-files<?= $key?>" class="form-control" type="file" name="images[]" multiple>
                                             </div>
                                             <div>
                                                 <input type="hidden" name="slug" value="<?= $item['slug']?>"/>
