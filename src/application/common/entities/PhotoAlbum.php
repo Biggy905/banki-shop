@@ -35,7 +35,7 @@ final class PhotoAlbum extends AbstractModel
         return $this->hasMany(
             FileStorage::class,
             [
-                'id_entity' => 'id',
+                'entity_id' => 'id',
             ]
         );
     }

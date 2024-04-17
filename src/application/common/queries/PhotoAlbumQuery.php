@@ -18,6 +18,15 @@ final class PhotoAlbumQuery extends ActiveQuery
         );
     }
 
+    public function byId(int $id): self
+    {
+        return $this->andWhere(
+            [
+                PhotoAlbum::tableName() . '.id' => $id,
+            ]
+        );
+    }
+
     public function bySlug(string $slug): self
     {
         return $this->andWhere(

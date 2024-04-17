@@ -27,7 +27,7 @@ final class PhotoalbumController extends AbstractController
 
     public function actionCreate(): array
     {
-        $postPayload = json_decode(Yii::$app->request->getRawBody(), true);
+        $postPayload = json_decode(Yii::$app->request->getRawBody(), true) ?? [];
         $form = $this->createPhotoalbumForm;
         $data = match ($form->runValidate($postPayload)) {
             true => $this->photoAlbumService->save($form),
@@ -39,7 +39,7 @@ final class PhotoalbumController extends AbstractController
 
     public function actionUpdate(string $slug): array
     {
-        $patchPayload = json_decode(Yii::$app->request->getRawBody(), true);
+        $patchPayload = json_decode(Yii::$app->request->getRawBody(), true) ?? [];
 
         $form = $this->updatePhotoalbumForm;
         $data = match (

@@ -51,7 +51,7 @@ final class PhotoAlbumService
     public function update(UpdatePhotoalbumForm $form): array
     {
         try {
-            $photoalbum = $this->photoAlbumRepository->findBySlug($form->slug);
+            $photoalbum = $this->photoAlbumRepository->findBySlug($form->old_slug);
             $photoalbum->title = $form->title;
             if ($form->old_slug !== $form->slug) {
                 $photoalbum->slug = $form->slug;

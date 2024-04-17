@@ -11,4 +11,5 @@ Yii::setAlias('common', $applicationDir . '/common');
 Yii::setAlias('site', $applicationDir . '/site');
 Yii::setAlias('api', $applicationDir . '/api');
 Yii::setAlias('console', $applicationDir . '/console');
-Yii::setAlias('FileStorage/tmp_image', $rootDir . '/FileStorage/tmp_image');
+Yii::setAlias('ImageFileStorage', $rootDir . '/FileStorage/tmp_images');
+Yii::setAlias('ImagePublic', $applicationDir . '/site/public/uploads');

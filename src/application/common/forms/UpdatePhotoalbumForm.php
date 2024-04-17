@@ -19,7 +19,7 @@ final class UpdatePhotoalbumForm extends AbstractForm
     {
         return [
             [
-                ['title', 'slug', 'new_slug'],
+                ['title', 'slug', 'old_slug'],
                 'required',
             ],
             [
@@ -27,12 +27,20 @@ final class UpdatePhotoalbumForm extends AbstractForm
                 'validateCheckSlug',
             ],
             [
-                'new_slug',
+                'slug',
                 'unique',
                 'targetClass' => PhotoAlbum::class,
+                'when' => static function ($model) {
+                    $result = true;
+                    if ($model->slug === $model->old_slug) {
+                        $result = false;
+                    }
+
+                    return $result;
+                }
             ],
             [
-                ['slug', 'new_slug'],
+                ['slug', 'old_slug'],
                 'match',
                 'pattern' => '/^[a-zA-Z]\w*$/i',
             ],
@@ -44,7 +52,7 @@ final class UpdatePhotoalbumForm extends AbstractForm
         $photoalbum = PhotoAlbum::find()
             ->byDeletedAtNull()
             ->bySlug($this->old_slug)
-            ->one();
+            ->exists();
 
         if (!$photoalbum) {
             $this->addError('slug', 'Запись не найдена');

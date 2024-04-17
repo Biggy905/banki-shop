@@ -8,7 +8,7 @@ return [
     ],
     [
         'verb' => ['get'],
-        'pattern' => 'photoalbum/<id>/item',
+        'pattern' => 'photoalbum/<slug>/item',
         'route' => 'index/item',
     ],
     [

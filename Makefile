@@ -13,6 +13,7 @@ help:
 	@echo "\033[1;32mcomposer-install\033[0m\t - Установить все пакеты для LK"
 	@echo "\033[1;32mmigrate-up\033[0m\t\t - Накат миграции БД"
 	@echo "\033[1;32mmigrate-down\033[0m\t\t - Откат миграции БД"
+	@echo "\033[1;32mmodify-dir\033[0m\t\t - Изменение прав доступа к директории"
 	@echo "\n"
 network-create:
 	docker network create bs-network
@@ -34,9 +35,10 @@ migrate-up:
 	docker compose run --rm bs-php-cli php ./yii migrate -- --interactive=0
 migrate-down:
 	docker compose run --rm bs-php-cli php ./yii migrate/down all -- --interactive=0
-chmod:
-	docker compose run --rm bs-php-cli chmod 777 -R /app/src/api/runtime
-	docker compose run --rm bs-php-cli chmod 777 -R /app/src/site/runtime
-	docker compose run --rm bs-php-cli chmod 777 -R /app/src/site/public/assets
-	docker compose run --rm bs-php-cli chmod 777 -R /app/src/console/runtime
-
+modify-dir:
+	docker compose run --rm bs-php-cli chmod 777 -R /app/src/application/api/runtime
+	docker compose run --rm bs-php-cli chmod 777 -R /app/src/application/site/runtime
+	docker compose run --rm bs-php-cli chmod 777 -R /app/src/application/site/public/assets
+	docker compose run --rm bs-php-cli chmod 777 -R /app/src/application/console/runtime
+	docker compose run --rm bs-php-cli chmod 777 -R /app/src/FileStorage/tmp_images
+	docker compose run --rm bs-php-cli ln -s /app/src/FileStorage/tmp_images /app/src/application/site/public/images

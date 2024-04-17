@@ -20,6 +20,15 @@ final class PhotoAlbumRepository implements PhotoAlbumRepositoryInterface
             ->all();
     }
 
+    public function findById(int $id): PhotoAlbum
+    {
+        return PhotoAlbum::find()
+            ->byDeletedAtNull()
+            ->byId($id)
+            ->joinWith('fileStorage')
+            ->one();
+    }
+
     public function findBySlug(string $slug): PhotoAlbum
     {
         return PhotoAlbum::find()

@@ -17,4 +17,6 @@ enum DateTimeFormatEnums: string
     case FORMAT_WEEK_DIGITAL = 'N';
 
     case FORMAT_YEAR = 'Y';
+
+    case DATE_TO_NAME_FILE = 'Y_M_D_H_i_s';
 }
