@@ -9,6 +9,7 @@ use application\common\enums\DateTimeFormatEnums;
 use application\common\helpers\DateTimeHelper;
 use application\common\repositories\interfaces\PhotoAlbumRepositoryInterface;
 use DomainException;
+use Exception;
 
 final class PhotoAlbumRepository implements PhotoAlbumRepositoryInterface
 {
@@ -45,6 +46,9 @@ final class PhotoAlbumRepository implements PhotoAlbumRepositoryInterface
         }
     }
 
+    /**
+     * @throws Exception
+     */
     public function softDelete(PhotoAlbum $photoAlbum): void
     {
         $photoAlbum->deleted_at = (DateTimeHelper::getDateTime())

@@ -48,6 +48,7 @@ services:
       - "3306:3306"
     volumes:
       - bs-mysql-db-data:/bitnami/mysql/data
+    command: mysqld --sql_mode=''
     restart: unless-stopped
 
 networks:
